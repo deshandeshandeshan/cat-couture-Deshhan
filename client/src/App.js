@@ -4,11 +4,13 @@ import DashboardPage from "./components/dashboard/DashboardPage";
 import ProductPage from "./components/products/ProductPage";
 import NotFoundPage from "./components/NotFoundPage";
 import Footer from "./components/Footer";
+import Controls from "./components/products/Controls";
 
 const App = () => {
   return (
     <div className="app">
       <Header />
+      <Controls />
       <Routes>
         <Route exact path="/dashboard" element={<DashboardPage />} />
         <Route exact path="/" element={<ProductPage />} />
