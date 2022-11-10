@@ -1,10 +1,9 @@
 import Product from "./Product";
 
-const ProductList = ({ products, limit, className }) => {
-  const limitedProducts = products.slice(0, limit);
+const ProductList = ({ products, className }) => {
   return (
     <ul className={className}>
-      {limitedProducts.map((product) => (
+      {products.map((product) => (
         <Product
           name={product.name}
           description={product.description}

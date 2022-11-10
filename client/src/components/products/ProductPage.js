@@ -21,7 +21,7 @@ const ProductPage = () => {
       try {
         setLoading(true);
         setError(false);
-        const result = await api.getProducts();
+        const result = await api.getProducts(limit);
         if (!result.ok) {
           throw new Error("API Error");
         }
@@ -43,14 +43,14 @@ const ProductPage = () => {
     fetchData();
 
     return () => abortController.abort();
-  }, []);
+  }, [limit]);
 
   return (
     <main className="main-layout section-padding">
       {loading && <Loader />}
       {error && <ErrorMessage message="Error fetching products" />}
       <Controls setLimit={setLimit} limit={limit} />
-      <ProductList products={products} limit={limit} className="main-content" />
+      <ProductList products={products} className="main-content" />
     </main>
   );
 };
