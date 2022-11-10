@@ -4,12 +4,15 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const PaginationControls = ({
-  onPrev,
-  onNext,
-  currentPage = null,
-  totalPages = null,
-}) => {
+const PaginationControls = ({ totalPages = null, page, setPage }) => {
+  const onPrev = () => {
+    setPage(page - 1);
+  };
+
+  const onNext = () => {
+    setPage(page + 1);
+  };
+
   return (
     <div className="container">
       <div className="controls">
@@ -19,7 +22,7 @@ const PaginationControls = ({
           </button>
         </div>
         <span>
-          Page {currentPage} of {totalPages}
+          Page {page} of {totalPages}
         </span>
         <div>
           <button aria-label="Next page" onClick={onNext}>
