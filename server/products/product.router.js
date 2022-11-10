@@ -19,10 +19,14 @@ router.get(
       const safeLimit = Boolean(limit) ? limit : 10
       const safePage = Boolean(page) ? page : 1
       
+      const allProducts = await productRepository.getAllProducts()
       const products = await productRepository.getPagedProducts(safeLimit, safePage)
 
       const responseResults = {
         products,
+        currentPage: safePage,
+        productsPerPage: safeLimit,
+        totalProducts: allProducts.length
       };
 
       return res.json(responseResults);
