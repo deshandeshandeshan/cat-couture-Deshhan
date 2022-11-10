@@ -50,7 +50,7 @@ const ProductPage = () => {
       {loading && <Loader />}
       {error && <ErrorMessage message="Error fetching products" />}
       <Controls setLimit={setLimit} limit={limit} />
-      <ProductList products={products} className="main-content" />
+      <ProductList products={products} limit={limit} className="main-content" />
     </main>
   );
 };
