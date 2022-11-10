@@ -19,14 +19,14 @@ router.get(
       const safeLimit = Boolean(limit) ? parseInt(limit) : 10
       const safePage = Boolean(parseInt(page)) ? parseInt(page) : 1
       
-      const allProducts = await productRepository.getAllProducts()
+      const allProducts = await productRepository.getTotalProducts()
       const products = await productRepository.getPagedProducts(safeLimit, safePage)
 
       const responseResults = {
         products,
         currentPage: safePage,
-        productsPerPage: safeLimit,
-        totalProducts: allProducts.length,
+        itemsPerPage: safeLimit,
+        totalItems: allProducts.length,
         totalPages: Math.ceil(allProducts.length / safeLimit)
       };
 

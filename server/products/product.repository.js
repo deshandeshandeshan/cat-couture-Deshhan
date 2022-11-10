@@ -21,7 +21,7 @@ p.id
 LIMIT $1 OFFSET $2
 `
 
-const getAllProductsSQL = `
+const getTotalProductsSQL = `
 SELECT
 p.id,
 p.name,
@@ -54,9 +54,9 @@ module.exports = {
           throw Error(error);
         }
       },
-      getAllProducts: async () => {
+      getTotalProducts: async () => {
         try {
-            const result = await db.query(getAllProductsSQL);
+            const result = await db.query(getTotalProductsSQL);
             return result.rows;
         } catch (error) {
           throw Error(error);
