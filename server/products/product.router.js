@@ -15,7 +15,11 @@ router.get(
   async (req, res, next) => {
     try {
       const {limit, page} = req.query;
-      const products = await productRepository.getPagedProducts(limit, page)
+
+      const safeLimit = Boolean(limit) ? limit : 10
+      const safePage = Boolean(page) ? page : 1
+      
+      const products = await productRepository.getPagedProducts(safeLimit, safePage)
 
       const responseResults = {
         products,
