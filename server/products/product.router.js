@@ -14,10 +14,20 @@ router.get(
   queryParamValidationMiddleware(queryParamsSchema),
   async (req, res, next) => {
     try {
-      const products = await productRepository.getProducts()
+      const {limit, page} = req.query;
+
+      const safeLimit = Boolean(limit) ? parseInt(limit) : 10
+      const safePage = Boolean(parseInt(page)) ? parseInt(page) : 1
+      
+      const allProducts = await productRepository.getTotalProducts()
+      const products = await productRepository.getPagedProducts(safeLimit, safePage)
 
       const responseResults = {
         products,
+        currentPage: safePage,
+        itemsPerPage: safeLimit,
+        totalItems: allProducts.length,
+        totalPages: Math.ceil(allProducts.length / safeLimit)
       };
 
       return res.json(responseResults);
