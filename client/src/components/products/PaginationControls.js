@@ -5,14 +5,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const PaginationControls = ({ totalPages, page, setPage }) => {
+  const prevDisabled = page > 1 ? false : true;
+  const nextDisabled = page < totalPages ? false : true;
+
   const onPrev = () => {
-    if (page > 1) {
+    if (!prevDisabled) {
       setPage(page - 1);
     }
   };
 
   const onNext = () => {
-    if (page < totalPages) {
+    if (!nextDisabled) {
       setPage(page + 1);
     }
   };
@@ -21,7 +24,11 @@ const PaginationControls = ({ totalPages, page, setPage }) => {
     <div className="container">
       <div className="controls">
         <div>
-          <button aria-label="Previous page" onClick={onPrev}>
+          <button
+            aria-label="Previous page"
+            onClick={onPrev}
+            disabled={prevDisabled}
+          >
             <FontAwesomeIcon icon={faChevronLeft} size="2x" />
           </button>
         </div>
@@ -29,7 +36,11 @@ const PaginationControls = ({ totalPages, page, setPage }) => {
           Page {page} of {totalPages}
         </span>
         <div>
-          <button aria-label="Next page" onClick={onNext}>
+          <button
+            aria-label="Next page"
+            onClick={onNext}
+            disabled={nextDisabled}
+          >
             <FontAwesomeIcon icon={faChevronRight} size="2x" />
           </button>
         </div>
