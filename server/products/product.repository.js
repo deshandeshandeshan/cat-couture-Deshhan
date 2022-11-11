@@ -19,7 +19,7 @@ LEFT JOIN discount_type dt ON pd.discount_type_id = dt.id
 ORDER BY
 p.id
 LIMIT $1 OFFSET $2
-`
+`;
 
 const getTotalProductsSQL = `
 SELECT
@@ -39,27 +39,27 @@ LEFT JOIN product_discount pd ON pd.product_id = p.id
 LEFT JOIN discount_type dt ON pd.discount_type_id = dt.id
 ORDER BY
 p.id
-`
+`;
 
 module.exports = {
-    getPagedProducts: async (limit, page) => {
-        try {
-            if (page <= 0 || !page) {
-                throw new Error('page number must be greater than 0')
-            }
-            const offset = limit * (page - 1);
-            const result = await db.query(getPagedProductsSQL, [limit, offset]);
-            return result.rows;
-        } catch (error) {
-          throw Error(error);
-        }
-      },
-      getTotalProducts: async () => {
-        try {
-            const result = await db.query(getTotalProductsSQL);
-            return result.rows;
-        } catch (error) {
-          throw Error(error);
-        }
-      },
-}
+  getPagedProducts: async (limit, page) => {
+    try {
+      if (page <= 0 || !page) {
+        throw new Error("page number must be greater than 0");
+      }
+      const offset = limit * (page - 1);
+      const result = await db.query(getPagedProductsSQL, [limit, offset]);
+      return result.rows;
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+  getTotalProducts: async () => {
+    try {
+      const result = await db.query(getTotalProductsSQL);
+      return result.rows;
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+};
