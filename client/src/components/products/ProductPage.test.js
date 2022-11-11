@@ -6,7 +6,9 @@ import {
 import userEvent from "@testing-library/user-event";
 import ProductPage from "./ProductPage";
 
-const setup = () => render(<ProductPage />);
+const setup = () => {
+  render(<ProductPage />);
+};
 
 beforeEach(async () => {
   await waitForElementToBeRemoved(() => screen.queryByTitle(/loading/i));
