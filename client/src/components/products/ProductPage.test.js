@@ -29,6 +29,10 @@ describe("ProductPage", () => {
   });
 
   test("WHEN the user navigates to the second page of the Products page, THEN the previous/back button of the pagination control will be enabled", () => {
+    const pageDisplay = screen.queryByText(/page/i);
+    expect(pageDisplay.textContent).toBe("Page 1 of 2");
+    const nextPageButton = screen.getByRole("button", { name: "Next page" });
+    userEvent.click(nextPageButton);
     const previousPageButton = screen.getByRole("button", {
       name: "Previous page",
     });
@@ -36,9 +40,12 @@ describe("ProductPage", () => {
   });
 
   test("WHEN the user navigates to the last page of the Products page, THEN next button of the pagination control will be disabled", () => {
+    const pageDisplay = screen.queryByText(/page/i);
+    expect(pageDisplay.textContent).toBe("Page 1 of 2");
     const nextPageButton = screen.getByRole("button", {
       name: "Next page",
     });
+    userEvent.click(nextPageButton);
     expect(nextPageButton).toBeDisabled();
   });
 
