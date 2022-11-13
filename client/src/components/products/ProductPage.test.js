@@ -8,7 +8,7 @@ import ProductPage from "./ProductPage";
 
 beforeEach(async () => {
   render(<ProductPage />);
-  await waitForElementToBeRemoved(() => screen.getByTitle(/loading/i));
+  await waitForElementToBeRemoved(() => screen.queryByTitle(/loading/i));
 });
 
 describe("ProductPage", () => {
