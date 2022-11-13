@@ -19,9 +19,9 @@ describe("GIVEN that the GET /products route exist", () => {
     const expectedResponseData = {
       products: await productRepository.getPagedProducts(defaultLimit, 1),
       currentPage: 1,
-      totalPages: Math.ceil(parseInt(totalProducts) / defaultLimit),
+      totalPages: Math.ceil(totalProducts.length / defaultLimit),
       itemsPerPage: defaultLimit,
-      totalItems: totalProducts,
+      totalItems: totalProducts.length,
     };
 
     const response = await request(app)
@@ -41,9 +41,9 @@ describe("GIVEN that the GET /products route exist", () => {
     const expectedResponseData = {
       products: [],
       currentPage: page,
-      totalPages: Math.ceil(parseInt(totalProducts) / defaultLimit),
+      totalPages: Math.ceil(totalProducts.length / defaultLimit),
       itemsPerPage: defaultLimit,
-      totalItems: totalProducts,
+      totalItems: totalProducts.length,
     };
 
     const response = await request(app)
@@ -59,13 +59,14 @@ describe("GIVEN that the GET /products route exist", () => {
     test("WHEN the limit query parameter is valid as per the API spec THEN return status 200 and an array of products", async () => {
       const totalProducts = await productRepository.getTotalProducts();
       const limit = 1;
+      const page = 1;
 
       const expectedResponseData = {
-        products: await productRepository.getPagedProducts(limit, 0),
+        products: await productRepository.getPagedProducts(limit, page),
         currentPage: 1,
-        totalPages: Math.ceil(parseInt(totalProducts) / limit),
+        totalPages: Math.ceil(totalProducts.length / limit),
         itemsPerPage: limit,
-        totalItems: totalProducts,
+        totalItems: totalProducts.length,
       };
 
       const response = await request(app)
@@ -97,9 +98,9 @@ describe("GIVEN that the GET /products route exist", () => {
       const expectedResponseData = {
         products: await productRepository.getPagedProducts(limit, 1),
         currentPage: 1,
-        totalPages: Math.ceil(parseInt(totalProducts) / limit),
+        totalPages: Math.ceil(totalProducts.length / limit),
         itemsPerPage: limit,
-        totalItems: totalProducts,
+        totalItems: totalProducts.length,
       };
 
       const response = await request(app)
@@ -117,7 +118,7 @@ describe("GIVEN that the GET /products route exist", () => {
         .set("Accept", "application/json");
 
       expect(response.status).toBe(400);
-      expect(response.body.message).toBe('"limit" must be a number');
+      expect(response.body.message).toBe('"page" must be a number');
       expect(response).toSatisfyApiSpec();
     });
   });
