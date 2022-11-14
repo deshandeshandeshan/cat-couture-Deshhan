@@ -1,0 +1,23 @@
+.narrow-layout > * {
+  max-width: 627px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table {
+  color: #333333;
+  background: #ffffff;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  width: 100%;
+}
+.tableCell {
+  padding: 0.5em;
+  border: 1px solid lightgrey;
+}
+.tableHeaderCell {
+  padding: 0.5em;
+  border: 1px solid lightgrey;
+  color: #000000;
+  background: rgba(0, 0, 0, 0.1);
+}

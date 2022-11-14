@@ -5,6 +5,7 @@ import ErrorMessage from "../ErrorMessage";
 import CategoriesReport from "./CategoriesReport";
 import DiscountsReport from "./DiscountReport";
 import { useAuth0 } from "@auth0/auth0-react";
+import "./DashboardPage.css";
 
 const DashboardPage = () => {
   const [loading, setLoading] = useState(false);

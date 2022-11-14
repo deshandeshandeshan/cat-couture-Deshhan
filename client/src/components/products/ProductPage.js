@@ -5,6 +5,7 @@ import Loader from "../Loader";
 import ErrorMessage from "../ErrorMessage";
 import Controls from "./Controls";
 import PaginationControls from "./PaginationControls";
+import "./ProductPage.css";
 
 const ProductPage = () => {
   const [loading, setLoading] = useState(false);

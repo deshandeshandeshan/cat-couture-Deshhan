@@ -10,7 +10,7 @@ const Controls = ({ setLimit, limit }) => {
     setLimit(selectedValue);
   };
   return (
-    <div className="controls">
+    <div className="limitControls">
       <p>Product limit</p>
       <select
         className="controlsSelect"

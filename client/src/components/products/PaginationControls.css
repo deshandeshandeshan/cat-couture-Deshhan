@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: auto;
+  overflow: scroll;
+}
+
+.controls {
+  width: 100%;
+  max-width: 200px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
