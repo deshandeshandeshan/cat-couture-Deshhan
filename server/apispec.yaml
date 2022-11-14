@@ -1,4 +1,4 @@
-openapi: "3.0.2"
+openapi: 3.0.2
 info:
   version: "1.0"
   title: Welcome to the Products API!
@@ -17,13 +17,23 @@ paths:
       parameters:
         - schema:
             type: integer
+            default: 10
             minimum: 1
+            maximum: 50
           in: query
           name: limit
           description: The number of products to return
           required: false
+        - schema:
+            type: integer
+            default: 0
+            minimum: 0
+          in: query
+          name: page
+          description: The page to be displayed
+          required: false
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -48,13 +58,13 @@ paths:
                   - totalPages
                   - itemsPerPage
                   - totalItems
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-        500:
+        "500":
           description: Internal Server Error
           content:
             application/json:
@@ -70,12 +80,33 @@ paths:
       tags:
         - reports
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 type: object
+                properties:
+                  categoriesReport:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/categoriesReport"
+                  discountsReport:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/discountsReport"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 components:
   securitySchemes:
     bearerAuth:
@@ -118,6 +149,34 @@ components:
         - imageDescription
         - discountValue
         - discountType
+    categoriesReport:
+      type: object
+      properties:
+        categoryName:
+          type: string
+        discountedProducts:
+          type: number
+        totalProducts:
+          type: number
+      required:
+        - categoryName
+        - discountedProducts
+        - totalProducts
+      x-stoplight:
+        id: 1a66b4271d469
+    discountsReport:
+      type: object
+      properties:
+        discountType:
+          type: string
+          nullable: true
+        totalProducts:
+          type: number
+      required:
+        - discountType
+        - totalProducts
+      x-stoplight:
+        id: edb521da7c2ba
     Error:
       type: object
       properties:
@@ -125,3 +184,6 @@ components:
           type: string
 tags:
   - name: products
+    description: Everything to do with products
+  - name: reports
+    description: Everything to do with reports
