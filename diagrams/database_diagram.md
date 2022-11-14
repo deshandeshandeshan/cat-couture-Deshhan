@@ -1,3 +1,3 @@
 # Database Diagram
 
-![img](./database_diagram.png)
+![img](./Database_diagram.png)
