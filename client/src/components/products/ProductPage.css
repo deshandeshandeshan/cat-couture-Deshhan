@@ -10,20 +10,34 @@ body {
   top: 0;
   left: 0;
 }
+
 .button {
   background-color: black;
   color: white;
 }
 
 .discountBadge {
-  padding: 0.5rem;
+  padding: 2rem;
 }
 
 .product {
   position: relative;
+  list-style: none;
+  border-style: solid;
+  border-color: black;
+  padding: 1rem;
 }
 
-.main-layout > * {
-  margin-left: auto;
-  margin-right: auto;
+.main-content {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.padding {
+  padding-bottom: 1rem;
 }
