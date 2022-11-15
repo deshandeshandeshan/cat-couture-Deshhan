@@ -9,8 +9,8 @@ describe("PaginationControls", () => {
       <PaginationControls
         onNext={() => {}}
         onPrev={onPrev}
-        currentPage={1}
-        totalPages={5}
+        page={1}
+        totalPages={2}
       />
     );
     const previousButton = screen.getByRole("button", {
@@ -22,13 +22,15 @@ describe("PaginationControls", () => {
   });
 
   test("WHEN the user is on the second page of the main product page, THEN the previous/back button of the pagination control will be enabled.", () => {
+    const setPage = (page) => page - 1;
     const onPrev = jest.fn();
     render(
       <PaginationControls
         onNext={() => {}}
         onPrev={onPrev}
-        currentPage={2}
-        totalPages={5}
+        page={2}
+        totalPages={2}
+        setPage={setPage}
       />
     );
     const previousButton = screen.getByRole("button", {
@@ -45,8 +47,8 @@ describe("PaginationControls", () => {
       <PaginationControls
         onNext={onNext}
         onPrev={() => {}}
-        currentPage={5}
-        totalPages={5}
+        page={2}
+        totalPages={2}
       />
     );
     const nextButton = screen.getByRole("button", {
