@@ -14,13 +14,20 @@ const LoginButton = () => {
 
   if (isAuthenticated) {
     return (
-      <button onClick={() => logout({ returnTo: window.location.origin })}>
+      <button
+        className="logoutButton"
+        onClick={() => logout({ returnTo: window.location.origin })}
+      >
         Log Out
       </button>
     );
   }
 
-  return <button onClick={() => loginWithRedirect()}>Log In</button>;
+  return (
+    <button className="loginButton" onClick={() => loginWithRedirect()}>
+      Log In
+    </button>
+  );
 };
 
 export default LoginButton;

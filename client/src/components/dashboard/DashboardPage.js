@@ -5,6 +5,7 @@ import ErrorMessage from "../ErrorMessage";
 import CategoriesReport from "./CategoriesReport";
 import DiscountsReport from "./DiscountReport";
 import { useAuth0 } from "@auth0/auth0-react";
+import "./DashboardPage.css";
 
 const DashboardPage = () => {
   const [loading, setLoading] = useState(false);
@@ -54,21 +55,20 @@ const DashboardPage = () => {
   }, [getAccessTokenSilently]);
 
   return (
-    <main className="narrow-layout main-content section-padding page-padding">
+    <main className="main-content">
       <div>
-        <h2>Dashboard</h2>
         {loading && <Loader />}
         {error && <ErrorMessage message={errorMessage} />}
         {categoryReports.length > 0 && (
           <CategoriesReport
             reportData={categoryReports}
-            className="half-width section-padding"
+            className="half-width section-padding "
           />
         )}
         {discountReports.length > 0 && (
           <DiscountsReport
             reportData={discountReports}
-            className="half-width section-padding"
+            className="half-width section-padding footerPadding"
           />
         )}
       </div>

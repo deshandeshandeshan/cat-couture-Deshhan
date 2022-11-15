@@ -1,0 +1,63 @@
+.logo {
+  font-size: 2rem;
+  display: block;
+}
+
+.header {
+  border-bottom-style: solid;
+}
+
+.rightLinkItems {
+  list-style-type: none;
+  padding-top: 1rem;
+}
+
+.link,
+.navButton {
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.loginButton,
+.logoutButton {
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.activeLink {
+  font-weight: bolder;
+}
+
+.rightLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 2rem;
+}
+
+@media only screen and (min-width: 40rem) {
+  .logo {
+    display: block;
+    float: left;
+  }
+
+  .header {
+    border-bottom-style: none;
+  }
+
+  .rightLinks {
+    display: flex;
+    justify-content: right;
+  }
+
+  .rightLinkItems {
+    padding-right: 2rem;
+  }
+
+  .nav {
+    border-bottom-style: solid;
+  }
+}

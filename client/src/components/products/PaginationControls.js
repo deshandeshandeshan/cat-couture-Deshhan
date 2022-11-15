@@ -3,6 +3,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import "./PaginationControls.css";
 
 const PaginationControls = ({ totalPages, page, setPage }) => {
   const prevDisabled = page > 1 ? false : true;

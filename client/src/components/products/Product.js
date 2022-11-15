@@ -12,7 +12,7 @@ const Product = ({
   return (
     <li className="product">
       <div className="card">
-        <div>
+        <div className="productImage padding">
           {imageName ? (
             <img
               src={`./img/${imageName}`}
@@ -34,10 +34,15 @@ const Product = ({
             />
           )}
         </div>
-        <h3>{name}</h3>
-        <p>Price {price}</p>
-        <p data-testid="product-description">{description}</p>
-        <button className="button">Add to Cart</button>
+        <h3 className="productName padding">{name}</h3>
+        <p className="productPrice padding">Price {price}</p>
+        <p
+          data-testid="product-description"
+          className="productDescription padding"
+        >
+          {description}
+        </p>
+        <button className="productButton">Add to Cart</button>
       </div>
     </li>
   );
