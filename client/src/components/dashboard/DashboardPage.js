@@ -55,20 +55,20 @@ const DashboardPage = () => {
   }, [getAccessTokenSilently]);
 
   return (
-    <main className="narrow-layout main-content section-padding page-padding">
+    <main className="main-content">
       <div>
         {loading && <Loader />}
         {error && <ErrorMessage message={errorMessage} />}
         {categoryReports.length > 0 && (
           <CategoriesReport
             reportData={categoryReports}
-            className="half-width section-padding"
+            className="half-width section-padding "
           />
         )}
         {discountReports.length > 0 && (
           <DiscountsReport
             reportData={discountReports}
-            className="half-width section-padding"
+            className="half-width section-padding footerPadding"
           />
         )}
       </div>

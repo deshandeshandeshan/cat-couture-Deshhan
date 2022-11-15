@@ -1,13 +1,15 @@
 .logo {
   font-size: 2rem;
   display: block;
+}
+
+.header {
   border-bottom-style: solid;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
 }
 
 .rightLinkItems {
   list-style-type: none;
+  padding-top: 1rem;
 }
 
 .link,
@@ -27,7 +29,7 @@
 }
 
 .activeLink {
-  color: #0ea68c;
+  font-weight: bolder;
 }
 
 .rightLinks {
@@ -42,13 +44,20 @@
     float: left;
   }
 
+  .header {
+    border-bottom-style: none;
+  }
+
   .rightLinks {
     display: flex;
     justify-content: right;
-    padding: 1rem 0 2.5rem;
   }
 
   .rightLinkItems {
     padding-right: 2rem;
+  }
+
+  .nav {
+    border-bottom-style: solid;
   }
 }

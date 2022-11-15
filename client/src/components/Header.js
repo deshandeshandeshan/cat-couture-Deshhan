@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       <header className={`header main-layout section-padding`}>
-        <h1 className="logo">Cat Couture</h1>
+        <h1 className="logo padding">Cat Couture</h1>
       </header>
       <header>
         <nav className={`nav page-padding`}>

@@ -19,12 +19,14 @@ body {
   border-style: solid;
   border-color: black;
   padding: 0.5rem;
+  margin-top: 1rem;
 }
 
 .discountBadge {
   padding: 2rem;
-  color: red;
+  color: white;
   font-size: 1rem;
+  background-color: red;
 }
 
 .product {
@@ -35,7 +37,7 @@ body {
   padding: 1rem;
 }
 
-.main-content {
+.productsList {
   display: grid;
   grid-gap: 2rem;
 }
@@ -43,15 +45,6 @@ body {
 .product-image {
   width: 100%;
   height: auto;
-}
-
-.padding {
-  padding-bottom: 1rem;
-}
-
-.section-padding {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 @media only screen and (min-width: 40rem) {

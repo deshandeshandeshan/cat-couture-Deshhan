@@ -19,3 +19,17 @@ code {
   color: #ffffff;
   background-color: #a60e0e;
 }
+
+.padding {
+  padding-bottom: 1rem;
+}
+
+.main-content {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

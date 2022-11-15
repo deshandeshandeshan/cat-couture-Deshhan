@@ -5,7 +5,7 @@ import TableHeaderCell from "./TableHeaderCell";
 const DiscountsReport = ({ reportData, className }) => {
   return (
     <div className={className}>
-      <h3 className="discountsTitle padding">Discounts Report</h3>
+      <h3 className="discountsTitle reportsPadding">Discounts Report</h3>
       <Table>
         <thead>
           <tr className="left-align">
