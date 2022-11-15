@@ -42,7 +42,7 @@ const Product = ({
         >
           {description}
         </p>
-        <button className="productButton button">Add to Cart</button>
+        <button className="productButton">Add to Cart</button>
       </div>
     </li>
   );

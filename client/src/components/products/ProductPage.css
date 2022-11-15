@@ -11,9 +11,14 @@ body {
   left: 0;
 }
 
-.button {
-  background-color: black;
-  color: white;
+.productButton {
+  border-radius: 0;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-style: solid;
+  border-color: black;
+  padding: 0.5rem;
 }
 
 .discountBadge {
@@ -40,4 +45,9 @@ body {
 
 .padding {
   padding-bottom: 1rem;
+}
+
+.section-padding {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }

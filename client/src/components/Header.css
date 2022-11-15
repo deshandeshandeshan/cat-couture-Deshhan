@@ -1,5 +1,9 @@
 .header .logo {
   font-size: 2rem;
+  display: block;
+  border-bottom-style: solid;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .rightLinkItems {
@@ -12,6 +16,14 @@
   display: flex;
   justify-content: center;
   text-decoration: none;
+}
+
+.loginButton,
+.logoutButton {
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .activeLink {
