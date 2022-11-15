@@ -1,5 +1,5 @@
-.narrow-layout > * {
-  max-width: 627px;
+.narrow-layout {
+  max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -7,17 +7,27 @@
 .table {
   color: #333333;
   background: #ffffff;
-  border: 1px solid grey;
+  border: 1px solid black;
   border-collapse: collapse;
   width: 100%;
 }
-.tableCell {
-  padding: 0.5em;
-  border: 1px solid lightgrey;
+.tableCell,
+td {
+  padding: 1rem;
+  border: 1px solid black;
 }
-.tableHeaderCell {
-  padding: 0.5em;
-  border: 1px solid lightgrey;
+.tableHeaderCell,
+th {
+  padding: 1rem;
+  border: 1px solid black;
   color: #000000;
   background: rgba(0, 0, 0, 0.1);
+}
+
+.right-align {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
 }

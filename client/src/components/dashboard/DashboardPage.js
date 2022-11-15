@@ -57,7 +57,6 @@ const DashboardPage = () => {
   return (
     <main className="narrow-layout main-content section-padding page-padding">
       <div>
-        <h2>Dashboard</h2>
         {loading && <Loader />}
         {error && <ErrorMessage message={errorMessage} />}
         {categoryReports.length > 0 && (
