@@ -1,4 +1,4 @@
-.header .logo {
+.logo {
   font-size: 2rem;
   display: block;
   border-bottom-style: solid;
@@ -36,7 +36,19 @@
   padding-bottom: 2rem;
 }
 
-.navButton {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+@media only screen and (min-width: 40rem) {
+  .logo {
+    display: block;
+    float: left;
+  }
+
+  .rightLinks {
+    display: flex;
+    justify-content: right;
+    padding: 1rem 0 2.5rem;
+  }
+
+  .rightLinkItems {
+    padding-right: 2rem;
+  }
 }
