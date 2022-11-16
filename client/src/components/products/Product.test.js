@@ -22,7 +22,7 @@ describe("Product", () => {
     );
     expect(screen.getByAltText("Test image")).toBeInTheDocument();
 
-    expect(screen.getByText("Price", { exact: false })).toHaveTextContent(
+    expect(screen.getByTestId("price", { exact: false })).toHaveTextContent(
       "$10.00"
     );
     expect(screen.getByRole("button")).toBeEnabled();

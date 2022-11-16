@@ -12,7 +12,7 @@ const ProductPage = () => {
   const [error, setError] = useState(false);
   const [products, setProducts] = useState([]);
   const [limit, setLimit] = useState(10);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const ProductPage = () => {
       try {
         setLoading(true);
         setError(false);
-        const result = await api.getProducts(limit, page);
+        const result = await api.getProducts(limit, currentPage);
         if (!result.ok) {
           throw new Error("API Error");
         }
@@ -48,7 +48,7 @@ const ProductPage = () => {
     fetchData();
 
     return () => abortController.abort();
-  }, [limit, page]);
+  }, [limit, currentPage]);
 
   return (
     <main className="main-layout section-padding">
@@ -57,8 +57,8 @@ const ProductPage = () => {
       <Controls setLimit={setLimit} limit={limit} />
       <ProductList products={products} className="productsList main-content" />
       <PaginationControls
-        page={page}
-        setPage={setPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
         totalPages={totalPages}
       />
     </main>

@@ -5,19 +5,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./PaginationControls.css";
 
-const PaginationControls = ({ totalPages, page, setPage }) => {
-  const prevDisabled = page > 1 ? false : true;
-  const nextDisabled = page < totalPages ? false : true;
+const PaginationControls = ({ totalPages, currentPage, setCurrentPage }) => {
+  const prevDisabled = currentPage > 1 ? false : true;
+  const nextDisabled = currentPage < totalPages ? false : true;
 
   const onPrev = () => {
     if (!prevDisabled) {
-      setPage(page - 1);
+      setCurrentPage(currentPage - 1);
     }
   };
 
   const onNext = () => {
     if (!nextDisabled) {
-      setPage(page + 1);
+      setCurrentPage(currentPage + 1);
     }
   };
 
@@ -34,7 +34,7 @@ const PaginationControls = ({ totalPages, page, setPage }) => {
           </button>
         </div>
         <span>
-          Page {page} of {totalPages}
+          Page {currentPage} of {totalPages}
         </span>
         <div>
           <button
