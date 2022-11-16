@@ -1,12 +1,20 @@
 # Wireframes
 
-## Wireframes
+## Products wireframes
 
 ![img](./wireframes/Small_screen_phone.png)
 
 ![img](./wireframes/Medium_screen_tablet.png)
 
 ![img](./wireframes/Large_screen_desktop.png)
+
+## Dashboard wireframes
+
+![img](./Dashboard_page/Dashboard_page_small.png)
+
+![img](./Dashboard_page/Dashboard_page_medium.png)
+
+![img](./Dashboard_page/Dashboard_page_large.png)
 
 ## Pagination controls
 
