@@ -35,7 +35,7 @@ const Product = ({
           )}
         </div>
         <h3 className="productName padding">{name}</h3>
-        <p className="productPrice padding">Price {price}</p>
+        <p className="productPrice padding">{price}</p>
         <p
           data-testid="product-description"
           className="productDescription padding"

@@ -7,7 +7,7 @@
   border-bottom-style: solid;
 }
 
-.rightLinkItems {
+.navLinkItems {
   list-style-type: none;
   padding-top: 1rem;
 }
@@ -32,7 +32,7 @@
   font-weight: bolder;
 }
 
-.rightLinks {
+.navLinks {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding-bottom: 2rem;
@@ -48,12 +48,13 @@
     border-bottom-style: none;
   }
 
-  .rightLinks {
+  .navLinks {
     display: flex;
     justify-content: right;
+    padding-bottom: 1rem;
   }
 
-  .rightLinkItems {
+  .navLinkItems {
     padding-right: 2rem;
   }
 

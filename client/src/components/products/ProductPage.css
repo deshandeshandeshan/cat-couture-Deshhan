@@ -47,6 +47,10 @@ body {
   height: auto;
 }
 
+.productPrice {
+  font-weight: bold;
+}
+
 @media only screen and (min-width: 40rem) {
   .main-content {
     grid-template-columns: 1fr 1fr;
