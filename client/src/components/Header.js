@@ -5,13 +5,13 @@ import "./Header.css";
 const Header = () => {
   return (
     <>
-      <header className={`header main-layout section-padding`}>
+      <header className={`header section-padding`}>
         <h1 className="logo padding">Cat Couture</h1>
       </header>
       <header>
         <nav className={`nav page-padding`}>
-          <ul className="rightLinks">
-            <li className="rightLinkItems">
+          <ul className="navLinks">
+            <li className="navLinkItems">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -21,7 +21,7 @@ const Header = () => {
                 Products
               </NavLink>
             </li>
-            <li className="rightLinkItems">
+            <li className="navLinkItems">
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
@@ -31,7 +31,7 @@ const Header = () => {
                 Dashboard
               </NavLink>
             </li>
-            <li className={`navButton rightLinkItems`}>
+            <li className={`navButton navLinkItems`}>
               <LoginButton />
             </li>
           </ul>
