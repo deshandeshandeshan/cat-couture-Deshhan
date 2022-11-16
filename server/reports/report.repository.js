@@ -6,7 +6,7 @@ module.exports = {
       const result = await db.query(
         `SELECT
           pc.name AS "categoryName",
-          COUNT(*)::INT AS "totalProducts",
+          COUNT(p.product_category_id)::INT AS "totalProducts",
           COUNT(pd.value)::INT AS "discountedProducts"
         FROM product p
         FULL OUTER JOIN product_category pc ON p.product_category_id = pc.id
